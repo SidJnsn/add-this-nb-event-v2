@@ -1,0 +1,21 @@
+<!-- ADD EVENT -->
+{% if page.type_slug == "event" %}
+  <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" asynch defer ></script>
+    
+	<!-- AddThisEvent Settings -->
+  <script type="text/javascript">
+	window.addeventasynch = function(){
+		addeventatc.settings({
+			license   : "aunNrDheMzcfrhYABmNk43311",
+			mouse     : false,
+			css       : true,
+			outlook   : {show:true, text:"Outlook Calendar"},
+			google    : {show:true, text:"Google Calendar"},
+			yahoo     : {show:true, text:"Yahoo Calendar"},
+			appleical : {show:true, text:"iCal Calendar"},
+			facebook  : {show:true, text:"Facebook Event"},
+			dropdown  : {order:"outlook,google,appleical"}
+		});
+	};
+   </script>
+{% endif %}
