@@ -1,0 +1,21 @@
+<!--  ADD EVENT -->
+<a href="{{page.url}}" class="addeventatc" title="Add to Calendar" data-direct="google">
+    Add to Google Calendar 
+    <span class="title">{{page.name}}</span>
+    <span class="start">{{ page.event.local_start_at | date: '%-d-%m-%Y %H:%M:%S' }}</span> 
+    <span class="end">{{ page.event.local_end_at | date: '%-d-%m-%Y %H:%M:%S' }}</span> 
+    <span class="timezone">America/Chicago</span> 
+    <span class="description">{{ page.event.content | strip_html | truncatewords: 30 }}</span> 
+    {% if page.event.is_location? %}
+      <span class="location">{{ page.event.venue_address.one_line }}</span>
+   {% endif %}
+   {% if page.event.has_contact? %}
+      <span class="organizer">{{ page.event.contact_name }}</span>
+      <span class="organizer_email">{{ page.event.contact_email }}</span>
+   {% endif %}
+   {% if page.event.has_facebook? %}
+      <span class="facebook_event">{{ page.event.facebook_url }}</span>
+   {% endif %}
+      <span class="date_format">DD/MM/YYYY</span>
+</a>
+  
